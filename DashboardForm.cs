@@ -30,11 +30,25 @@ namespace PixMartt
         {
             LoadArtworks();
         }
-        private void LoadArtworks()
+        private void LoadArtworks(string searchKeyword = "")
         {
             flowLayoutPanel1.Controls.Clear();
 
-            foreach (Artwork artwork in DataStore.Artworks)
+            var artworks = DataStore.Artworks.AsEnumerable();
+
+            if (!string.IsNullOrWhiteSpace(searchKeyword))
+            {
+                searchKeyword = searchKeyword.ToLower();
+
+                artworks = artworks.Where(a =>
+                    a.Title.ToLower().Contains(searchKeyword) ||
+                    a.Category.ToLower().Contains(searchKeyword) ||
+                    a.PostedBy.ToLower().Contains(searchKeyword) ||
+                    a.Price.ToString("0.00").Contains(searchKeyword)
+                );
+            }
+
+            foreach (Artwork artwork in artworks)
             {
                 Panel panel = new Panel();
                 panel.Width = 210;
@@ -53,7 +67,7 @@ namespace PixMartt
                 title.Text = artwork.Title;
                 title.Top = 140;
                 title.Left = 15;
-                title.Width = 170;
+                title.Width = 180;
                 title.Height = 20;
 
                 Label postedBy = new Label();
@@ -88,8 +102,8 @@ namespace PixMartt
                 panel.Controls.Add(picture);
                 panel.Controls.Add(title);
                 panel.Controls.Add(postedBy);
-                panel.Controls.Add(btnView);
                 panel.Controls.Add(price);
+                panel.Controls.Add(btnView);
 
                 flowLayoutPanel1.Controls.Add(panel);
             }
@@ -114,6 +128,22 @@ namespace PixMartt
             LoginForm login = new LoginForm();
             login.Show();
             this.Hide(); 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtSearch.Clear();
+            LoadArtworks();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            LoadArtworks(txtSearch.Text);
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadArtworks(txtSearch.Text);
         }
     }
 }

@@ -34,12 +34,15 @@
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnClearSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(326, 31);
+            this.lblTitle.Location = new System.Drawing.Point(12, 26);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(97, 13);
             this.lblTitle.TabIndex = 0;
@@ -94,11 +97,44 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(776, 330);
             this.flowLayoutPanel1.TabIndex = 5;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(190, 29);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(166, 20);
+            this.txtSearch.TabIndex = 6;
+            this.txtSearch.Text = "Search Bar";
+            this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(362, 27);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 7;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnClearSearch
+            // 
+            this.btnClearSearch.Location = new System.Drawing.Point(443, 27);
+            this.btnClearSearch.Name = "btnClearSearch";
+            this.btnClearSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnClearSearch.TabIndex = 8;
+            this.btnClearSearch.Text = "Clear";
+            this.btnClearSearch.UseVisualStyleBackColor = true;
+            this.btnClearSearch.Click += new System.EventHandler(this.button1_Click);
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 456);
+            this.Controls.Add(this.btnClearSearch);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnProfile);
@@ -121,5 +157,8 @@
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnClearSearch;
     }
 }

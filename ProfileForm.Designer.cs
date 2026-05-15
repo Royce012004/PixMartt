@@ -33,6 +33,12 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +62,7 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(60, 121);
+            this.lblUsername.Location = new System.Drawing.Point(60, 101);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(58, 13);
             this.lblUsername.TabIndex = 2;
@@ -74,19 +80,75 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(120, 210);
+            this.btnBack.Location = new System.Drawing.Point(21, 213);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(124, 39);
+            this.btnBack.Size = new System.Drawing.Size(106, 35);
             this.btnBack.TabIndex = 4;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(133, 213);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(106, 35);
+            this.btnEdit.TabIndex = 5;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(245, 213);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(106, 35);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(60, 133);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Password:";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(133, 98);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(172, 20);
+            this.txtUsername.TabIndex = 8;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(133, 130);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(172, 20);
+            this.txtPassword.TabIndex = 9;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(133, 166);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(172, 20);
+            this.txtEmail.TabIndex = 10;
             // 
             // ProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(381, 281);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblUsername);
@@ -107,5 +169,11 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtEmail;
     }
 }
